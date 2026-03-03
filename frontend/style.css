@@ -1,0 +1,96 @@
+/* Custom CSS tailored to complement Tailwind for Chat App */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Glass effect for panels */
+.glass-panel {
+    background: rgba(31, 41, 55, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Smooth fade transitions for view changing */
+.view-fade-in {
+    opacity: 1;
+    z-index: 10;
+}
+
+.view-fade-out {
+    opacity: 0;
+    z-index: -10;
+    pointer-events: none;
+}
+
+/* Custom Message Bubbles */
+.message-bubble {
+    max-width: 80%;
+    padding: 10px 16px;
+    border-radius: 18px;
+    word-wrap: break-word;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.message-sent {
+    background: linear-gradient(135deg, #2563eb, #4f46e5);
+    color: white;
+    border-bottom-right-radius: 4px;
+    margin-left: auto;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+}
+
+.message-received {
+    background: #374151; /* gray-700 */
+    color: #f3f4f6; /* gray-100 */
+    border-bottom-left-radius: 4px;
+    margin-right: auto;
+    border: 1px solid #4b5563; /* gray-600 */
+}
+
+.message-system {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #9ca3af; /* gray-400 */
+    margin: 16px auto;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+.message-system span {
+    background: #1f2937; /* gray-800 */
+    padding: 4px 12px;
+    border-radius: 9999px;
+    border: 1px solid #374151; /* gray-700 */
+}
+
+/* Animations */
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Padding for safe areas on mobile devices */
+.pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 16px);
+}
+
+/* Custom scrollbar for messages */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: #4b5563;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
