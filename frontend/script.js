@@ -13,7 +13,7 @@ const statusDot = document.getElementById('status-dot');
 const statusText = document.getElementById('status-text');
 
 let ws = null;
-const WS_URL = "ws://localhost:8000/ws";
+const WS_URL = "ws://anonymous-chat-baq9.onrender.com/ws";
 
 // UI Functions
 function showView(viewId) {
